@@ -39,6 +39,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <grpc.verson>0.15.0</grpc.verson>
+        <nacos_version>1.0.0</nacos_version>
+        <slf4j_version>1.7.25</slf4j_version>
     </properties>
 
     <dependencyManagement>
@@ -53,6 +55,18 @@
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-stub</artifactId>
                 <version>${grpc.verson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j_version}</version>
             </dependency>
 
         </dependencies>

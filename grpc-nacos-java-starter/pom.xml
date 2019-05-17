@@ -8,9 +8,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>grpc-nacos-java</artifactId>
+    <artifactId>grpc-nacos-java-starter</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.1-SNAPSHOT</version>
 
     <name>GRPC Nacos Java integration</name>
 
@@ -49,6 +48,19 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.github.moriadry</groupId>
+            <artifactId>grpc-nacos-java</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.3.RELEASE</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>4.1.0</version>
@@ -61,18 +73,13 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>1.4.1.RELEASE</version>
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-
     </dependencies>
-
 
     <build>
         <plugins>
