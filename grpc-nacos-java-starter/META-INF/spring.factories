@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.moriadry.nacos.grpc.starter.GrpcNacosConguration

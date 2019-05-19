@@ -1,4 +1,4 @@
-package org.moriadry.grpc.starter;
+package org.moriadry.nacos.grpc.starter;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
