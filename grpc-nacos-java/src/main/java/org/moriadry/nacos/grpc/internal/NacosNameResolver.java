@@ -1,4 +1,4 @@
-package org.moriadry.nacos.grpc;
+package org.moriadry.nacos.grpc.internal;
 
 import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.exception.NacosException;

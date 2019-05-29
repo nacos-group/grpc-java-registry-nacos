@@ -38,7 +38,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <grpc.verson>0.15.0</grpc.verson>
+        <grpc.verson>1.16.1</grpc.verson>
         <nacos_version>1.0.0</nacos_version>
         <slf4j_version>1.7.25</slf4j_version>
     </properties>
@@ -102,7 +102,7 @@
 
     <modules>
         <module>grpc-nacos-java</module>
-<!--        <module>grpc-nacos-java-starter</module>-->
+        <module>grpc-nacos-java-starter</module>
     </modules>
 
     <distributionManagement>

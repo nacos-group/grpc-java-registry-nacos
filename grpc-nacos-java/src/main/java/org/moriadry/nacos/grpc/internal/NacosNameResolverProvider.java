@@ -1,4 +1,4 @@
-package org.moriadry.nacos.grpc;
+package org.moriadry.nacos.grpc.internal;
 
 import io.grpc.Attributes;
 import io.grpc.NameResolver;
