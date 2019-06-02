@@ -1,6 +1,7 @@
 package org.moriadry.nacos.grpc.starter;
 
 import io.grpc.BindableService;
+import io.grpc.ServerBuilder;
 import io.grpc.ServerServiceDefinition;
 import io.grpc.netty.NettyServerBuilder;
 import io.grpc.util.MutableHandlerRegistry;
@@ -27,7 +28,7 @@ public class GrpcServer {
     /**
      * grpc server
      */
-    protected io.grpc.Server server;
+    public io.grpc.Server server;
 
     /**
      * service registry
@@ -50,10 +51,17 @@ public class GrpcServer {
         this.server = NettyServerBuilder.forPort(port).fallbackHandlerRegistry(handlerRegistry).build();
     }
 
+    public void init(int port, Object ref) {
+        this.port = port;
+        BindableService bindableService = (BindableService) ref;
+        server = ServerBuilder.forPort(port).addService(bindableService).build();
+    }
+
     public void start() {
         if (started) {
          return;
         }
+
         synchronized (this) {
             try {
                 server.start();
@@ -104,5 +112,10 @@ public class GrpcServer {
         started = false;
     }
 
+    public void blockUtilShutdown() throws InterruptedException {
+        if (server != null) {
+            server.awaitTermination();
+        }
+    }
 
 }
