@@ -53,6 +53,12 @@
 
             <dependency>
                 <groupId>io.grpc</groupId>
+                <artifactId>grpc-core</artifactId>
+                <version>${grpc.verson}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
                 <artifactId>grpc-stub</artifactId>
                 <version>${grpc.verson}</version>
             </dependency>

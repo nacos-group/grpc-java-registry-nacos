@@ -1,14 +1,19 @@
 package org.moriadry.nacos.grpc.starter;
 
+import com.alibaba.nacos.api.NacosFactory;
+import com.alibaba.nacos.api.exception.NacosException;
+import com.alibaba.nacos.api.naming.pojo.Instance;
 import io.grpc.BindableService;
-import io.grpc.ServerBuilder;
+import com.alibaba.nacos.api.naming.NamingService;
 import io.grpc.ServerServiceDefinition;
 import io.grpc.netty.NettyServerBuilder;
 import io.grpc.util.MutableHandlerRegistry;
+import org.moriadry.nacos.grpc.starter.utils.NetUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -46,15 +51,16 @@ public class GrpcServer {
      */
     protected AtomicInteger invokerCnt = new AtomicInteger();
 
-    public void init(int port) {
+    private NamingService namingService = null;
+
+    public void init(int port, Properties properties) {
         this.port = port;
         this.server = NettyServerBuilder.forPort(port).fallbackHandlerRegistry(handlerRegistry).build();
-    }
-
-    public void init(int port, Object ref) {
-        this.port = port;
-        BindableService bindableService = (BindableService) ref;
-        server = ServerBuilder.forPort(port).addService(bindableService).build();
+        try {
+            this.namingService = NacosFactory.createNamingService(properties);
+        } catch (NacosException e) {
+            logger.error("init grpc server failed, error: {}", e.getErrMsg());
+        }
     }
 
     public void start() {
@@ -67,7 +73,7 @@ public class GrpcServer {
                 server.start();
                 logger.info("grpc server started at port {}", port);
             } catch (IOException e) {
-                logger.error("grpc server started error, msg: ", e.getMessage());
+                logger.error("grpc server started error, msg: {}", e.getMessage());
             }
         }
     }
@@ -78,11 +84,19 @@ public class GrpcServer {
         serviceInfo.put(bindableService, serverServiceDefinition);
 
         try {
+            namingService.registerInstance(serverServiceDefinition.getServiceDescriptor().getName(), createInstance());
             handlerRegistry.addService(serverServiceDefinition);
             invokerCnt.incrementAndGet();
         } catch (Exception e) {
             logger.error("Register grpc service error ", e);
         }
+    }
+
+    private Instance createInstance() {
+        Instance instance = new Instance();
+        instance.setIp(NetUtils.getLocalHost());
+        instance.setPort(port);
+        return instance;
     }
 
     public void unregisterService(Object ref) {
@@ -117,5 +131,16 @@ public class GrpcServer {
             server.awaitTermination();
         }
     }
+
+    private NamingService buildNamingService (String url) {
+        NamingService namingService = null;
+        try {
+            namingService = NacosFactory.createNamingService(url);
+        } catch (NacosException e) {
+            logger.error("build naming service error, msg: {}", e.getErrMsg());
+        }
+        return  namingService;
+    }
+
 
 }
