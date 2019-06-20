@@ -7,7 +7,7 @@
     <artifactId>grpc-nacos-java-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>grpc nacos lb aggregator</name>
+    <name>GRPC Nacos lb aggregator</name>
 
     <licenses>
         <license>

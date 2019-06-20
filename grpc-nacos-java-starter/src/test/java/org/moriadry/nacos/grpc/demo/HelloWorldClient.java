@@ -12,20 +12,20 @@ import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 
-public class HelloworldClient {
+public class HelloWorldClient {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final ManagedChannel channel;
     private final GrpcTestServiceGrpc.GrpcTestServiceBlockingStub blockingStub;
 
-    public HelloworldClient(int port, URI uri, String nacosServiceId) {
+    public HelloWorldClient(int port, URI uri, String nacosServiceId) {
         this(ManagedChannelBuilder.forTarget("nacos://" + nacosServiceId)
             .nameResolverFactory(new NacosNameResolverProvider(uri, Attributes.newBuilder().build()))
             .usePlaintext(true)
             .build());
     }
 
-    public HelloworldClient(ManagedChannel channel) {
+    public HelloWorldClient(ManagedChannel channel) {
         this.channel = channel;
         blockingStub = GrpcTestServiceGrpc.newBlockingStub(channel);
     }
@@ -36,7 +36,7 @@ public class HelloworldClient {
     }
 
     public static void main(String[] args) {
-        HelloworldClient client = new HelloworldClient(50051, URI.create("http://127.0.0.1:8848"), "GrpcTestService");
+        HelloWorldClient client = new HelloWorldClient(50051, URI.create("http://127.0.0.1:8848"), "GrpcTestService");
         client.reqString("AAA");
     }
 }
