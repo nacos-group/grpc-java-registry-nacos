@@ -40,7 +40,7 @@ Start a [Nacos naming server](https://github.com/alibaba/nacos#quick-start) is a
 
 #### Step 2: Config for projects
 
-Check this config: https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-starter/src/test/resources/config.properties
+Check the necessary config [here](https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-starter/src/test/resources/config.properties)
 
     `NACOS_URI` means the uri of Nacos naming uri to register.
     `GRPC_PORT` means the port of Grpc server,which is needed by both server and client.
