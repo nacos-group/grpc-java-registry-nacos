@@ -50,3 +50,13 @@ mvn exec:java@server-test
 ```bash
 mvn exec:java@client-test
 ```
+
+## Next Steps
+
+### Golang support when nacos-go-sdk is ready.
+
+### And more features welcome to be requested.
+
+## License
+
+Grpc Nacos java is under the Apache 2.0 license. See the [LICENSE](https://github.com/Moriadry/grpc-nacos-java/blob/master/LICENSE) file for details.
