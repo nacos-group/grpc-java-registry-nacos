@@ -10,6 +10,12 @@ this is common way of GRPC Nacos Java integration. Please feel free to add more 
 * Automatic service registration and discovery
 * Round robin LoadBalancer which supported by Grpc
 
+## Requirements
+
+Latest stable [Apache Maven](http://maven.apache.org), Maven 3.2.5 or above. Note that this is build-time requirement.
+
+Runtime requirement: JDK 8 is a recommend to run this application.
+
 ## Building
 
 You may clone this project and step into grpc-nacos-java sub directory before read on.
@@ -22,7 +28,7 @@ You may clone this project and step into grpc-nacos-java sub directory before re
 Run the following command to build the project(Java 1.8 is required to build the master branch).
 
 ```
-  mvn clean compile
+  mvn clean install
 ```
 
 ## Getting started by demo
@@ -44,6 +50,3 @@ mvn exec:java@server-test
 ```bash
 mvn exec:java@client-test
 ```
-
-
-
