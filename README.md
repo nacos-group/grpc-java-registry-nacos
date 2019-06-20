@@ -38,24 +38,34 @@ Run the following command to build the project(Java 1.8 is required to build the
 
 Start a [Nacos naming server](https://github.com/alibaba/nacos#quick-start) is a must.
 
-#### Step 2: Start grpc server
+#### Step 2: Config for projects
+
+Check this config: https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-starter/src/test/resources/config.properties
+
+    `NACOS_URI` means the uri of Nacos naming uri to register.
+    `GRPC_PORT` means the port of Grpc server,which is needed by both server and client.
+
+#### Step 3: Start grpc server
 
 ```bash
 cd grpc-nacos-java-starter
 mvn exec:java@server-test
 ```
 
-### Step 3: Start grpc client
+#### Step 4: Start grpc client
 
 ```bash
 mvn exec:java@client-test
 ```
+#### Step 5: Result
+
+Calling result will be print out on the screen.
 
 ## Next Steps
 
-### Golang support when nacos-go-sdk is ready.
+* Golang support when nacos-go-sdk is ready.
 
-### And more features welcome to be requested.
+* And more features welcome to be requested.
 
 ## License
 
