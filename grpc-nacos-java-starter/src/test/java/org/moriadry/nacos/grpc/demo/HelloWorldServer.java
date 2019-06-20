@@ -2,6 +2,7 @@ package org.moriadry.nacos.grpc.demo;
 
 import org.moriadry.nacos.grpc.model.grpc.impl.GrpcTestServiceImpl;
 import org.moriadry.nacos.grpc.starter.GrpcServer;
+import org.moriadry.nacos.grpc.starter.utils.ConfigResult;
 import org.moriadry.nacos.grpc.utils.NacosUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +18,8 @@ public class HelloWorldServer {
 
     private void start() throws IOException {
         server = new GrpcServer();
-        int port = 50051;
-        URI uri = URI.create("http://127.0.0.1:8848");
+        int port = ConfigResult.GRPC_PORT;
+        URI uri = URI.create(ConfigResult.NACOS_URI);
         Properties propertiesForNacos = new Properties();
         propertiesForNacos = NacosUtils.buildNacosProperties(uri, propertiesForNacos);
         server.init(port, propertiesForNacos);

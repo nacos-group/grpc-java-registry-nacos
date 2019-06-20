@@ -22,7 +22,7 @@ You may clone this project and step into grpc-nacos-java sub directory before re
 Run the following command to build the project(Java 1.8 is required to build the master branch).
 
 ```
-  mvn clean install
+  mvn clean compile
 ```
 
 ## Getting started by demo
