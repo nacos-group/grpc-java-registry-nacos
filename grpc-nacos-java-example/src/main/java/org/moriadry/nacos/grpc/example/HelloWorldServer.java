@@ -39,7 +39,7 @@ public class HelloWorldServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         final HelloWorldServer server = new HelloWorldServer();
-        server.start(new GrpcTestServiceImpl());
+        server.start(new GrpcTestServiceImpl[]{new GrpcTestServiceImpl()});
         server.server.blockUtilShutdown();
     }
 
