@@ -1,6 +1,6 @@
 # grpc-nacos-java
 
-this is common way of GRPC Nacos Java integration. Please feel free to add more features with this repo by sending pull requests and raising a issue.
+this is common way of gRPC Nacos Java integration. Please feel free to add more features with this repo by sending pull requests and raising a issue.
 
 ## Features
 
@@ -8,7 +8,7 @@ this is common way of GRPC Nacos Java integration. Please feel free to add more 
 * grpc server builder and starter
 * integrate with [Nacos](https://github.com/alibaba/nacos)
 * Automatic service registration and discovery
-* Round robin LoadBalancer which supported by Grpc
+* Round robin LoadBalancer which supported by gRPC
 
 ## Requirements
 
@@ -45,17 +45,17 @@ Check the necessary config [here](https://github.com/Moriadry/grpc-nacos-java/bl
     `NACOS_URI` means the uri of Nacos naming uri to register.
     `GRPC_PORT` means the port of Grpc server,which is needed by both server and client.
 
-#### Step 3: Start grpc server
+#### Step 3: Start gRPC server
 
 ```bash
-cd grpc-nacos-java-starter
-mvn exec:java@server-test
+cd grpc-nacos-java-example
+mvn exec:java@server-demo
 ```
 
-#### Step 4: Start grpc client
+#### Step 4: Start gRPC client
 
 ```bash
-mvn exec:java@client-test
+mvn exec:java@client-demo
 ```
 #### Step 5: Result
 
@@ -63,10 +63,10 @@ Calling result will be print out on the screen.
 
 ## Next Steps
 
-* Golang support when nacos-go-sdk is ready.
+* Golang will be supported when nacos-go-sdk provided.
 
-* And more features welcome to be requested.
+* More features welcome to be requested.
 
 ## License
 
-Grpc Nacos java is under the Apache 2.0 license. See the [LICENSE](https://github.com/Moriadry/grpc-nacos-java/blob/master/LICENSE) file for details.
+gRPC Nacos java is under the Apache 2.0 license. See the [LICENSE](https://github.com/Moriadry/grpc-nacos-java/blob/master/LICENSE) file for details.

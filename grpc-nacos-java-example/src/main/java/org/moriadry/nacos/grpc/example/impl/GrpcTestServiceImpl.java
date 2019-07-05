@@ -1,4 +1,4 @@
-package org.moriadry.nacos.grpc.model.grpc.impl;
+package org.moriadry.nacos.grpc.example.impl;
 
 import io.grpc.stub.StreamObserver;
 import org.moriadry.nacos.grpc.model.grpc.GrpcTestServiceGrpc;

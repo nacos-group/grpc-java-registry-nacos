@@ -1,4 +1,4 @@
-package org.moriadry.nacos.grpc.starter.utils;
+package org.moriadry.nacos.grpc.utils;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;

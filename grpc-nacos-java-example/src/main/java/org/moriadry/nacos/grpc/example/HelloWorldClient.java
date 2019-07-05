@@ -1,4 +1,4 @@
-package org.moriadry.nacos.grpc.demo;
+package org.moriadry.nacos.grpc.example;
 
 import io.grpc.Attributes;
 import io.grpc.ManagedChannel;
@@ -7,7 +7,7 @@ import org.moriadry.nacos.grpc.internal.NacosNameResolverProvider;
 import org.moriadry.nacos.grpc.model.grpc.GrpcTestServiceGrpc;
 import org.moriadry.nacos.grpc.model.grpc.GrpcTestService_Request_String;
 import org.moriadry.nacos.grpc.model.grpc.GrpcTestService_Response_String;
-import org.moriadry.nacos.grpc.starter.utils.ConfigResult;
+import org.moriadry.nacos.grpc.utils.ConfigResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
