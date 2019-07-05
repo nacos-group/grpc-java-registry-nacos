@@ -17,13 +17,13 @@ public class HelloWorldServer {
 
     GrpcServer server;
 
-    private void start(BindableService bindableService) {
+    private void start(BindableService[] bindableServices) {
         server = new GrpcServer();
         int port = ConfigResult.GRPC_PORT;
         URI uri = URI.create(ConfigResult.NACOS_URI);
         Properties properties = new Properties();
         properties = NacosUtils.buildNacosProperties(uri, properties);
-        server.init(port, properties, bindableService);
+        server.init(port, properties, bindableServices);
         server.start();
         Runtime.getRuntime().addShutdownHook(new Thread() {
                                                  @Override

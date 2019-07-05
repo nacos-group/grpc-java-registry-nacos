@@ -53,7 +53,7 @@ public class GrpcServer {
 
     private NamingService namingService = null;
 
-    public void init(int port, Properties properties, BindableService bindableService) {
+    public void init(int port, Properties properties, BindableService[] bindableServices) {
         this.port = port;
         this.server = NettyServerBuilder.forPort(port).fallbackHandlerRegistry(handlerRegistry).build();
         try {
@@ -61,7 +61,9 @@ public class GrpcServer {
         } catch (NacosException e) {
             logger.error("init grpc server failed, error: {}", e.getErrMsg());
         }
-        registerService(bindableService);
+        for (BindableService bindableService: bindableServices) {
+            registerService(bindableService);
+        }
     }
 
     public void start() {
