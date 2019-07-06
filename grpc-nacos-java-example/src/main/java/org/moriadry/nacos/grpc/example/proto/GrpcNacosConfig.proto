@@ -10,6 +10,7 @@ option java_package = "org.moriadry.nacos.grpc.model.grpc";
 option java_outer_classname = "GrpcNacosProto";
 
 
+// this config is a must if you want to integrate nacos with grpc
 extend google.protobuf.MessageOptions {
 
   int32 grpc_nacos_port = 50001;

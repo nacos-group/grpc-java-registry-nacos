@@ -1,6 +1,6 @@
 # Nacos ECO project
 
-[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/apache/dubbo)
+[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/Moriadry/grpc-nacos-java)
 
 # grpc-nacos-java
 
@@ -44,11 +44,17 @@ Start a [Nacos naming server](https://github.com/alibaba/nacos#quick-start) is a
 
 #### Step 2: Config for projects
 
-Check the necessary config [here](https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-example/src/main/resources/config.properties)
+Check the necessary config [here](https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-example/src/main/java/org/moriadry/nacos/grpc/example/proto/GrpcNacosConfig.proto)
+You can copy this proto to your project. And do pay attention to the config usage.
 
-    `NACOS_URI` means the uri of Nacos naming uri to register.
-    `GRPC_PORT` means the port of Grpc server,which is needed by both server and client.
+    `nacos_uri` means the uri of Nacos naming uri to register.
+    `grpc_nacos_port` means the port of Grpc server,which is needed by both server and client.
 
+    use `GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.grpcNacosPort)` to get configuration of grpc port,
+    and `GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.nacosUri)` represents the configuration of nacos registry url. 
+     
+    
+    
 #### Step 3: Start gRPC server
 
 ```bash
