@@ -3,7 +3,8 @@ package org.moriadry.nacos.grpc.example;
 import io.grpc.BindableService;
 import org.moriadry.nacos.grpc.GrpcServer;
 import org.moriadry.nacos.grpc.example.impl.GrpcTestServiceImpl;
-import org.moriadry.nacos.grpc.utils.ConfigResult;
+import org.moriadry.nacos.grpc.model.grpc.GrpcNacosOptions;
+import org.moriadry.nacos.grpc.model.grpc.GrpcNacosProto;
 import org.moriadry.nacos.grpc.utils.NacosUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,8 +20,9 @@ public class HelloWorldServer {
 
     private void start(BindableService[] bindableServices) {
         server = new GrpcServer();
-        int port = ConfigResult.GRPC_PORT;
-        URI uri = URI.create(ConfigResult.NACOS_URI);
+
+        int port = GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.grpcNacosPort);
+        URI uri = URI.create(GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.nacosUri));
         Properties properties = new Properties();
         properties = NacosUtils.buildNacosProperties(uri, properties);
         server.init(port, properties, bindableServices);

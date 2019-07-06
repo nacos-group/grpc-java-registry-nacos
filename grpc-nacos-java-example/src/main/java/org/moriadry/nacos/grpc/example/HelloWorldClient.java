@@ -4,10 +4,7 @@ import io.grpc.Attributes;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.moriadry.nacos.grpc.internal.NacosNameResolverProvider;
-import org.moriadry.nacos.grpc.model.grpc.GrpcTestServiceGrpc;
-import org.moriadry.nacos.grpc.model.grpc.GrpcTestService_Request_String;
-import org.moriadry.nacos.grpc.model.grpc.GrpcTestService_Response_String;
-import org.moriadry.nacos.grpc.utils.ConfigResult;
+import org.moriadry.nacos.grpc.model.grpc.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +34,9 @@ public class HelloWorldClient {
     }
 
     public static void main(String[] args) {
-        HelloWorldClient client = new HelloWorldClient(ConfigResult.GRPC_PORT, URI.create(ConfigResult.NACOS_URI), "GrpcTestService");
+        int port = GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.grpcNacosPort);
+        URI uri = URI.create(GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.nacosUri));
+        HelloWorldClient client = new HelloWorldClient(port, uri, "GrpcTestService");
         client.reqString("AAA");
     }
 }
