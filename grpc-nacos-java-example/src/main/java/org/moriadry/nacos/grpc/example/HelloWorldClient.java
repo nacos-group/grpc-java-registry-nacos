@@ -36,7 +36,7 @@ public class HelloWorldClient {
     public static void main(String[] args) {
         int port = GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.grpcNacosPort);
         URI uri = URI.create(GrpcNacosOptions.getDescriptor().getOptions().getExtension(GrpcNacosProto.nacosUri));
-        HelloWorldClient client = new HelloWorldClient(port, uri, "GrpcTestService");
+        HelloWorldClient client = new HelloWorldClient(port, uri, "org.moriadry.nacos.grpc.example.proto.GrpcTestService");
         client.reqString("AAA");
     }
 }
