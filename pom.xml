@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.moriadry</groupId>
-    <artifactId>grpc-nacos-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.alibaba.nacos</groupId>
+    <artifactId>grpc-java-registry-nacos-parent</artifactId>
+    <version>0.1.0-beta</version>
     <packaging>pom</packaging>
-    <name>gRPC Nacos lb aggregator</name>
+    <name>gRPC Nacos registry aggregator</name>
 
     <licenses>
         <license>
@@ -17,9 +17,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/moriadry/grpc-nacos-java.git</connection>
-        <developerConnection>scm:git:git@github.com:moriadry/grpc-nacos-java.git</developerConnection>
-        <url>https://github.com/moriadry/grpc-nacos-java</url>
+        <connection>scm:git:git://github.com/nacos-group/grpc-java-registry-nacos.git</connection>
+        <developerConnection>scm:git:git@github.com:nacos-group/grpc-java-registry-nacos.git</developerConnection>
+        <url>https://github.com/nacos-group/grpc-java-registry-nacos</url>
     </scm>
 
     <developers>
@@ -77,8 +77,8 @@
     </build>
 
     <modules>
-        <module>grpc-nacos-java</module>
-        <module>grpc-nacos-java-example</module>
+        <module>grpc-java-registry-nacos</module>
+        <module>grpc-java-registry-nacos-example</module>
     </modules>
 
     <distributionManagement>

@@ -1,8 +1,8 @@
 # Nacos ECO project
 
-[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/Moriadry/grpc-nacos-java)
+[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/nacos-group/grpc-java-registry-nacos)
 
-# grpc-nacos-java
+# grpc-java-registry-nacos
 
 this is common way of gRPC Nacos Java integration. Please feel free to add more features with this repo by sending pull requests and raising a issue.
 
@@ -22,11 +22,11 @@ Runtime requirement: JDK 8 is a recommend to run this application.
 
 ## Building
 
-You may clone this project and step into grpc-nacos-java sub directory before read on.
+You may clone this project and step into grpc-java-registry-nacos sub directory before read on.
 
 ```bash
-# git clone https://github.com/Moriadry/grpc-nacos-java
-# cd grpc-nacos-java
+# git clone https://github.com/nacos-group/grpc-java-registry-nacos
+# cd grpc-java-registry-nacos
 ```
 
 Run the following command to build the project(Java 1.8 is required to build the master branch).
@@ -44,7 +44,7 @@ Start a [Nacos naming server](https://github.com/alibaba/nacos#quick-start) is a
 
 #### Step 2: Config for projects
 
-Check the necessary config [here](https://github.com/Moriadry/grpc-nacos-java/blob/master/grpc-nacos-java-example/src/main/java/org/moriadry/nacos/grpc/example/proto/GrpcNacosConfig.proto)
+Check the necessary config [here](https://github.com/nacos-group/grpc-java-registry-nacos/blob/master/grpc-java-registry-nacos-example/src/main/java/com/alibaba/nacos/grpc/example/proto/GrpcNacosConfig.proto)
 You can copy this proto to your project. And do pay attention to the config usage.
 
     `nacos_uri` means the uri of Nacos naming uri to register.
@@ -58,7 +58,7 @@ You can copy this proto to your project. And do pay attention to the config usag
 #### Step 3: Start gRPC server
 
 ```bash
-cd grpc-nacos-java-example
+cd grpc-java-registry-nacos-example
 mvn exec:java@server-demo
 ```
 
@@ -79,4 +79,4 @@ Calling result will be print out on the screen.
 
 ## License
 
-gRPC Nacos java is under the Apache 2.0 license. See the [LICENSE](https://github.com/Moriadry/grpc-nacos-java/blob/master/LICENSE) file for details.
+gRPC Nacos java is under the Apache 2.0 license. See the [LICENSE](https://github.com/nacos-group/grpc-java-registry-nacos/blob/master/LICENSE) file for details.
