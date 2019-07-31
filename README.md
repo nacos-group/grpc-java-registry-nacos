@@ -4,7 +4,7 @@
 
 # grpc-java-registry-nacos
 
-this is common way of gRPC Nacos Java integration. Please feel free to add more features with this repo by sending pull requests and raising a issue.
+this is common way of gRPC Nacos Java registry integration. Please feel free to add more features with this repo by sending pull requests and raising a issue.
 
 ## Features
 
