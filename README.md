@@ -1,6 +1,6 @@
 # Nacos ECO project
 
-[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/nacos-group/grpc-java-registry-nacos)
+[![Build Status](https://travis-ci.org/nacos-group/grpc-java-registry-nacos.svg?branch=master)](https://travis-ci.org/nacos-group/grpc-java-registry-nacos)
 
 # grpc-java-registry-nacos
 
